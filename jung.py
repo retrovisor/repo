@@ -25,8 +25,6 @@ def construct_index(directory_path):
 
     return index
 
-construct_index('check')
-
 def ask_the_journal():
     index = GPTSimpleVectorIndex.load_from_disk('index.json')
 
@@ -50,18 +48,16 @@ def ask_the_journal():
             index2 = GPTListIndex(retrieved_docs)
 
             while state == SUMMARIZE_DOCUMENTS:
-                query = input("\n What do you want to know? ")
+                query = input("What do you want to now about yourself? ")
 
                 if(query == "exit"):
                     state = RETRIEVE_DOCUMENTS
                     break
 
                 response = index2.query(query, response_mode="compact", verbose=True)
-                import textwrap
-
-                your_text = "YOUR RESULT: \n " + response.response
-                print (textwrap.fill(your_text, width=80))
-                 # print("YOUR RESULT:", response.response)
+                print(response.response)
 
 
-ask_the_journal()
+
+if __name__ == '__main__':
+    ask_the_journal();
