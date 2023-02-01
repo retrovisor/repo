@@ -1,11 +1,3 @@
-!pip install gpt-index
-
-!pip install openai
-
-!pip install simphile
-
-os.environ["OPENAI_API_KEY"] = "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"
-
 from gpt_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
 from langchain import OpenAI
 
