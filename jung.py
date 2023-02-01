@@ -1,3 +1,7 @@
+pip install gpt-index
+pip install openai
+pip install simphile
+
 from gpt_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
 from langchain import OpenAI
 
